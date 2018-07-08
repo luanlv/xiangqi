@@ -1,0 +1,52 @@
+/*
+ * Board
+ */
+.blue .cg-board-wrap {
+  background-image: url(images/board/blue.svg);
+}
+
+.merida .cg-board-wrap piece.pawn.white {
+  background-image: url('images/pieces/xiangqi/rS.svg');
+}
+.merida .cg-board-wrap piece.bishop.white {
+  background-image: url('images/pieces/xiangqi/rE.svg');
+}
+.merida .cg-board-wrap piece.canon.white {
+  background-image: url('images/pieces/xiangqi/rC.svg');
+}
+.merida .cg-board-wrap piece.knight.white {
+  background-image: url('images/pieces/xiangqi/rH.svg');
+}
+.merida .cg-board-wrap piece.rook.white {
+  background-image: url('images/pieces/xiangqi/rR.svg');
+}
+.merida .cg-board-wrap piece.queen.white {
+  background-image: url('images/pieces/xiangqi/rA.svg');
+}
+.merida .cg-board-wrap piece.king.white {
+  background-image: url('images/pieces/xiangqi/rG.svg');
+}
+
+
+.merida .cg-board-wrap piece.pawn.black {
+  background-image: url('images/pieces/xiangqi/bS.svg');
+}
+.merida .cg-board-wrap piece.bishop.black {
+  background-image: url('images/pieces/xiangqi/bE.svg');
+
+}
+.merida .cg-board-wrap piece.canon.black {
+  background-image: url('images/pieces/xiangqi/bC.svg');
+}
+.merida .cg-board-wrap piece.knight.black {
+  background-image: url('images/pieces/xiangqi/bH.svg');
+}
+.merida .cg-board-wrap piece.rook.black {
+  background-image: url('images/pieces/xiangqi/bR.svg');
+}
+.merida .cg-board-wrap piece.queen.black {
+  background-image: url('images/pieces/xiangqi/bA.svg');
+}
+.merida .cg-board-wrap piece.king.black {
+  background-image: url('images/pieces/xiangqi/bG.svg');
+}
