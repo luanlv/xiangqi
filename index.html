@@ -10,6 +10,7 @@
       <div id="dirty" class="cg-board-wrap"></div>
     </div>
     <script src="./chessground.js?v=0"></script>
+    <script src="./xiangqi.js?v=0"></script>
     <script>
       var cg = Chessground(document.getElementById('dirty'),
           {
@@ -30,7 +31,8 @@
       // setTimeout(function() {
       //     cg.move('47', '48')
       // }, 3000)
-
+      var xiangqi = Chess()
+        xiangqi.moves();
     </script>
   </body>
 </html>
