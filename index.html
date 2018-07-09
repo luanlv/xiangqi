@@ -9,30 +9,68 @@
     <div class="blue merida">
       <div id="dirty" class="cg-board-wrap"></div>
     </div>
+    <div>
+      <button
+        onClick="toggle()"
+      >Toggle</button>
+    </div>
     <script src="./chessground.js?v=0"></script>
     <script src="./xiangqi.js?v=0"></script>
     <script>
-      var cg = Chessground(document.getElementById('dirty'),
+      var cg = Chessground(document.getElementById('dirty'));
+      var logic = cg.logic()
+      cg.set(
           {
               movable: {
-                  free: true,
-                  dests: {
-                      '03': ['04'],
-                      '23': ['24'],
-                      '43': ['44', '46'],
-                      '63': ['64'],
-                      '83': ['84'],
-                      '46' : ['45', '44']
-                  }
+                  color: 'white',
+                  free: false,
+                  dests: logic.whiteDests
               }
           }
-      );
-      // cg.move('46', '47')
-      // setTimeout(function() {
-      //     cg.move('47', '48')
-      // }, 3000)
-      var xiangqi = Chess()
-        xiangqi.moves();
+      )
+
+      cg.set({
+          movable: {
+              events: {
+                  // after: playOtherSide(cg)
+                  after: playOtherSide(cg)
+              }
+          }
+      });
+
+
+      // cg.move('00', '01');
+      // cg.playPremove()
+      // console.log(cg.state)
+
+      function toggle(){
+          cg.toggleOrientation()
+          setTimeout(function() {
+              cg.redrawAll
+          }, 2000)
+      }
+
+      function playOtherSide(cg) {
+          return function(orig, dest) {
+              logic = cg.logic()
+              cg.set({
+                  turnColor: cg.state.turnColor,
+                  movable: {
+                      color: cg.state.turnColor,
+                      dests: cg.state.turnColor === 'white' ? logic.whiteDests : logic.blackDests
+                  }
+              });
+          };
+      }
+
+      function turnColor(color){
+          if(color === 'white'){
+              return 'black'
+          } else {
+              return 'white'
+          }
+      }
+
     </script>
   </body>
 </html>
